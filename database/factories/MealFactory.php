@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\MealType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -26,6 +27,7 @@ class MealFactory extends Factory
         return [
             'name' => $name,
             'description' => 'A traditional Cameroonian meal called ' . $name,
+            'type' => $this->faker->randomElement(array_column(MealType::cases(), 'value')),
             'calories' => $this->faker->numberBetween(300, 700),
             'protein' => $this->faker->randomFloat(1, 10, 40),
             'carbs' => $this->faker->randomFloat(1, 20, 80),
