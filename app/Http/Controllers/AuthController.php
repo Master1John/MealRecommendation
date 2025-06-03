@@ -19,7 +19,7 @@ class AuthController extends Controller
             'age' => 'nullable|integer',
             'height' => 'nullable|numeric',
             'weight' => 'nullable|numeric',
-            'goal' => 'nullable|string'
+            'goal' => 'nullable|enum:general_health,gain_muscle,lose_weight,improve_endurance,maintain_weight'
         ]);
 
         $user = User::query()->create([
