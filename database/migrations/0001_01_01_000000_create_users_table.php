@@ -1,5 +1,6 @@
 <?php
 
+use App\GoalType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -21,7 +22,7 @@ return new class extends Migration
             $table->integer('age')->nullable();
             $table->float('height')->nullable(); // cm
             $table->float('weight')->nullable(); // kg
-            $table->string('goal')->nullable();
+            $table->enum('goal', array_column(GoalType::cases(), 'value'))->default('general_health');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -22,7 +22,7 @@ class MealRecommendationSeeder extends Seeder
 
         $meal = $meals->random();
 
-        MealRecommendation::create([
+        MealRecommendation::query()->create([
             'user_id' => $user->id,
             'meal_id' => $meal->id,
             'recommended_date' => Carbon::now()->toDateString()

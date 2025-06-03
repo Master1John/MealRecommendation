@@ -1,5 +1,6 @@
 <?php
 
+use App\GoalType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->float('carbs')->nullable();
             $table->float('fat')->nullable();
             $table->string('meal_time'); // breakfast, lunch, dinner, snack
-            $table->string('goal_type'); // lose_weight, gain_muscle, etc.
+            $table->enum('goal_type', array_column(GoalType::cases(), 'value')); // lose_weight, gain_muscle, etc.
             $table->timestamps();
         });
     }
