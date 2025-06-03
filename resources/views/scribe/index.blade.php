@@ -100,7 +100,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: May 25, 2025</li>
+        <li>Last updated: June 3, 2025</li>
     </ul>
 </div>
 
@@ -146,8 +146,7 @@ You can switch the language used with the tabs at the top right (or from the nav
     \"gender\": \"architecto\",
     \"age\": 16,
     \"height\": 4326.41688,
-    \"weight\": 4326.41688,
-    \"goal\": \"architecto\"
+    \"weight\": 4326.41688
 }"
 </code></pre></div>
 
@@ -169,8 +168,7 @@ let body = {
     "gender": "architecto",
     "age": 16,
     "height": 4326.41688,
-    "weight": 4326.41688,
-    "goal": "architecto"
+    "weight": 4326.41688
 };
 
 fetch(url, {
@@ -336,10 +334,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="goal"                data-endpoint="POSTapi-register"
-               value="architecto"
+               value=""
                data-component="body">
     <br>
-<p>Example: <code>architecto</code></p>
+
         </div>
         </form>
 

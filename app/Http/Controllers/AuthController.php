@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\GoalType;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Enum;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
@@ -19,7 +21,7 @@ class AuthController extends Controller
             'age' => 'nullable|integer',
             'height' => 'nullable|numeric',
             'weight' => 'nullable|numeric',
-            'goal' => 'nullable|enum:general_health,gain_muscle,lose_weight,improve_endurance,maintain_weight'
+            'goal' => ['nullable', new Enum(GoalType::class)]
         ]);
 
         $user = User::query()->create([

@@ -96,7 +96,7 @@ endpoints:
         name: goal
         description: ''
         required: false
-        example: architecto
+        example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +110,6 @@ endpoints:
       age: 16
       height: 4326.41688
       weight: 4326.41688
-      goal: architecto
     fileParameters: []
     responses: []
     responseFields: []
