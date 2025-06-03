@@ -32,7 +32,8 @@ class MealController extends Controller
 
     public function show($id)
     {
-        return Meal::query()->findOrFail($id);
+        $meal = Meal::query()->findOrFail($id);
+        return response()->json($meal, 201);
     }
 
     public function update(Request $request, $id)

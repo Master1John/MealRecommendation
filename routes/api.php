@@ -10,7 +10,7 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/meals', [MealController::class, 'index']);
+    Route::resource('/meals', MealController::class);
     Route::get('/recommend', [RecommendationController::class, 'recommend']);
     Route::get('/history', [RecommendationController::class, 'history']);
     Route::post('/logout', [AuthController::class, 'logout']);
