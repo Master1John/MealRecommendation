@@ -25,6 +25,6 @@ class DatabaseSeeder extends Seeder
             'goal' => 'gain_muscle',
         ]);
 
-        $this->call([MealRecommendationSeeder::class]);
+        $this->call([MealSeeder::class, MealRecommendationSeeder::class]);
     }
 }

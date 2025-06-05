@@ -9,7 +9,7 @@ class MealController extends Controller
 {
     public function index()
     {
-        return Meal::all();
+        return reponse()->json(Meal::query()->paginate(10), 201);
     }
 
     public function store(Request $request)

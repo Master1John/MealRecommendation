@@ -38,6 +38,23 @@ class AuthController extends Controller
         ], 201);
     }
 
+    public function edit(Request $request)
+    {
+        $credentials = $request->validate([
+            'height' => 'nullable|numeric',
+            'weight' => 'nullable|numeric',
+            'gender' => 'nullable|string',
+            'age' => 'nullable|integer',
+            'goal' => ['nullable', new Enum(GoalType::class)]
+        ]);
+
+        $user = User::query()->where('id', auth()->user()->id)->update($credentials);
+
+        return response()->json([
+            'user' => $user
+        ]);
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
