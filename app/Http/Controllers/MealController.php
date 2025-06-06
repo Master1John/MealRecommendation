@@ -15,6 +15,7 @@ class MealController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'image' => 'image|nullable|mimes:jpeg,jpg,png,jif,webp|max:2048',
             'name' => 'required|string',
             'description' => 'nullable|string',
             'calories' => 'required|integer',
@@ -25,7 +26,12 @@ class MealController extends Controller
             'goal_type' => 'required|string'
         ]);
 
-        $meal = Meal::query()->create($validated);
+
+        $path = $request->file('image')->store('public/images/meals');
+
+        $relativePath = str_replace('public', '', $path);
+
+        $meal = Meal::query()->create([...$request->except('image'), 'image' => $relativePath]);
 
         return response()->json($meal, 201);
     }

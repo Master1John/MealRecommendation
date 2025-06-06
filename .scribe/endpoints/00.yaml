@@ -223,13 +223,23 @@ endpoints:
       authenticated: false
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
       name:
         name: name
         description: ''
@@ -319,7 +329,8 @@ endpoints:
       fat: 4326.41688
       meal_time: architecto
       goal_type: architecto
-    fileParameters: []
+    fileParameters:
+      image: null
     responses: []
     responseFields: []
     auth: []
@@ -563,7 +574,7 @@ endpoints:
         name: plan_date
         description: 'Must be a valid date.'
         required: true
-        example: '2025-06-05T12:23:40'
+        example: '2025-06-06T06:17:12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -594,7 +605,7 @@ endpoints:
         name: 'meals[].meal_time'
         description: ''
         required: true
-        example: snack
+        example: breakfast
         type: string
         enumValues:
           - breakfast
@@ -605,11 +616,11 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      plan_date: '2025-06-05T12:23:40'
+      plan_date: '2025-06-06T06:17:12'
       meals:
         -
           id: architecto
-          meal_time: snack
+          meal_time: breakfast
     fileParameters: []
     responses: []
     responseFields: []

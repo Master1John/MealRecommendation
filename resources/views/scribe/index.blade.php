@@ -124,7 +124,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 5, 2025</li>
+        <li>Last updated: June 6, 2025</li>
     </ul>
 </div>
 
@@ -645,19 +645,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost:8000/api/meals" \
-    --header "Content-Type: application/json" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --data "{
-    \"name\": \"architecto\",
-    \"description\": \"Eius et animi quos velit et.\",
-    \"calories\": 16,
-    \"protein\": 4326.41688,
-    \"carbs\": 4326.41688,
-    \"fat\": 4326.41688,
-    \"meal_time\": \"architecto\",
-    \"goal_type\": \"architecto\"
-}"
-</code></pre></div>
+    --form "name=architecto"\
+    --form "description=Eius et animi quos velit et."\
+    --form "calories=16"\
+    --form "protein=4326.41688"\
+    --form "carbs=4326.41688"\
+    --form "fat=4326.41688"\
+    --form "meal_time=architecto"\
+    --form "goal_type=architecto"\
+    --form "image=@/tmp/php6v67dl344a2l8UmUtyN" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -666,25 +664,25 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
-let body = {
-    "name": "architecto",
-    "description": "Eius et animi quos velit et.",
-    "calories": 16,
-    "protein": 4326.41688,
-    "carbs": 4326.41688,
-    "fat": 4326.41688,
-    "meal_time": "architecto",
-    "goal_type": "architecto"
-};
+const body = new FormData();
+body.append('name', 'architecto');
+body.append('description', 'Eius et animi quos velit et.');
+body.append('calories', '16');
+body.append('protein', '4326.41688');
+body.append('carbs', '4326.41688');
+body.append('fat', '4326.41688');
+body.append('meal_time', 'architecto');
+body.append('goal_type', 'architecto');
+body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
     method: "POST",
     headers,
-    body: JSON.stringify(body),
+    body,
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -709,7 +707,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <form id="form-POSTapi-meals" data-method="POST"
       data-path="api/meals"
       data-authed="0"
-      data-hasfiles="0"
+      data-hasfiles="1"
       data-isarraybody="0"
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-meals', this);">
@@ -744,10 +742,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="POSTapi-meals"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -762,6 +760,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="image"                data-endpoint="POSTapi-meals"
+               value=""
+               data-component="body">
+    <br>
+<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/tmp/php6v67dl344a2l8UmUtyN</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
@@ -1496,11 +1505,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"plan_date\": \"2025-06-05T12:23:40\",
+    \"plan_date\": \"2025-06-06T06:17:12\",
     \"meals\": [
         {
             \"id\": \"architecto\",
-            \"meal_time\": \"snack\"
+            \"meal_time\": \"breakfast\"
         }
     ]
 }"
@@ -1518,11 +1527,11 @@ const headers = {
 };
 
 let body = {
-    "plan_date": "2025-06-05T12:23:40",
+    "plan_date": "2025-06-06T06:17:12",
     "meals": [
         {
             "id": "architecto",
-            "meal_time": "snack"
+            "meal_time": "breakfast"
         }
     ]
 };
@@ -1613,10 +1622,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="plan_date"                data-endpoint="POSTapi-mealplans"
-               value="2025-06-05T12:23:40"
+               value="2025-06-06T06:17:12"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-06-05T12:23:40</code></p>
+<p>Must be a valid date. Example: <code>2025-06-06T06:17:12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -1644,10 +1653,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="meals.0.meal_time"                data-endpoint="POSTapi-mealplans"
-               value="snack"
+               value="breakfast"
                data-component="body">
     <br>
-<p>Example: <code>snack</code></p>
+<p>Example: <code>breakfast</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>breakfast</code></li> <li><code>lunch</code></li> <li><code>dinner</code></li> <li><code>snack</code></li></ul>
                     </div>
