@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Meal;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class MealSeeder extends Seeder
 {
@@ -13,6 +15,19 @@ class MealSeeder extends Seeder
      */
     public function run(): void
     {
-        Meal::factory()->count(30)->create();
+        $files = Storage::disk('public')->files('images/meals');
+
+        foreach ($files as $filePath) {
+            $filename = basename($filePath);
+            $name = pathinfo($filename, PATHINFO_FILENAME);
+
+            $mealName = Str::title(str_replace(['_', '-'], ' ', $name));
+
+            Meal::factory()->create([
+                'name' => $mealName,
+                'description' => 'Delicious' . $mealName,
+                'image' => str_replace('public/', '', $filePath),
+            ]);
+        }
     }
 }

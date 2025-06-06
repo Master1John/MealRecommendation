@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('meals', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
             $table->string('name');
             $table->text('description')->nullable();
             $table->enum('type', array_column(MealType::cases(), 'value'))->default('breakfast');

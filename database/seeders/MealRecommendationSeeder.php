@@ -18,7 +18,7 @@ class MealRecommendationSeeder extends Seeder
     {
         $user = User::query()->first();
 
-        $meals = Meal::factory(5)->create(['goal_type' => $user->goal]);
+        $meals = Meal::query()->where('goal_type', $user->goal)->get();
 
         $meal = $meals->random();
 
