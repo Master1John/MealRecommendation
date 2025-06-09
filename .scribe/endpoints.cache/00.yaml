@@ -302,16 +302,6 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         custom: []
-      meal_time:
-        name: meal_time
-        description: ''
-        required: true
-        example: architecto
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
       goal_type:
         name: goal_type
         description: ''
@@ -329,7 +319,6 @@ endpoints:
       protein: 4326.41688
       carbs: 4326.41688
       fat: 4326.41688
-      meal_time: architecto
       goal_type: architecto
     fileParameters:
       image: null
@@ -576,7 +565,7 @@ endpoints:
         name: plan_date
         description: 'Must be a valid date.'
         required: true
-        example: '2025-06-06T06:17:12'
+        example: '2025-06-09T10:01:11'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -603,11 +592,11 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         custom: []
-      'meals[].meal_time':
-        name: 'meals[].meal_time'
+      'meals[].type':
+        name: 'meals[].type'
         description: ''
         required: true
-        example: breakfast
+        example: dinner
         type: string
         enumValues:
           - breakfast
@@ -618,11 +607,11 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      plan_date: '2025-06-06T06:17:12'
+      plan_date: '2025-06-09T10:01:11'
       meals:
         -
           id: architecto
-          meal_time: breakfast
+          type: dinner
     fileParameters: []
     responses: []
     responseFields: []

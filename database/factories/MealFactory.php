@@ -32,7 +32,6 @@ class MealFactory extends Factory
             'protein' => $this->faker->randomFloat(1, 10, 40),
             'carbs' => $this->faker->randomFloat(1, 20, 80),
             'fat' => $this->faker->randomFloat(1, 5, 30),
-            'meal_time' => $this->faker->randomElement(['breakfast', 'lunch', 'dinner']),
             'goal_type' => $this->faker->randomElement(['lose_weight', 'gain_muscle', 'maintain_weight']),
         ];
     }

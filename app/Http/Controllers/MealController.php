@@ -9,7 +9,7 @@ class MealController extends Controller
 {
     public function index()
     {
-        return reponse()->json(Meal::query()->paginate(10), 201);
+        return response()->json(Meal::query()->paginate(10), 201);
     }
 
     public function store(Request $request)
@@ -22,7 +22,6 @@ class MealController extends Controller
             'protein' => 'nullable|numeric',
             'carbs' => 'nullable|numeric',
             'fat' => 'nullable|numeric',
-            'meal_time' => 'required|string',
             'goal_type' => 'required|string'
         ]);
 

@@ -19,7 +19,6 @@ class Meal extends Model
         'protein',
         'carbs',
         'fat',
-        'meal_time',
         'goal_type'
     ];
 

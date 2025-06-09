@@ -1,5 +1,6 @@
 <?php
 
+use App\MealType;
 use App\Models\Meal;
 use App\Models\MealPlan;
 use Illuminate\Database\Migrations\Migration;
@@ -17,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(MealPlan::class);
             $table->foreignId(Meal::class);
-            $table->enum('meal_time', ['breakfast', 'lunch', 'dinner', 'snack']);
+            $table->enum('type', array_column(MealType::cases(), 'value'));
         });
     }
 

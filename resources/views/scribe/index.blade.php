@@ -124,7 +124,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 6, 2025</li>
+        <li>Last updated: June 9, 2025</li>
     </ul>
 </div>
 
@@ -653,9 +653,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "protein=4326.41688"\
     --form "carbs=4326.41688"\
     --form "fat=4326.41688"\
-    --form "meal_time=architecto"\
     --form "goal_type=architecto"\
-    --form "image=@/tmp/php6v67dl344a2l8UmUtyN" </code></pre></div>
+    --form "image=@/tmp/phpoidva312eosn9GFVlNU" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -675,7 +674,6 @@ body.append('calories', '16');
 body.append('protein', '4326.41688');
 body.append('carbs', '4326.41688');
 body.append('fat', '4326.41688');
-body.append('meal_time', 'architecto');
 body.append('goal_type', 'architecto');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
@@ -768,7 +766,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/tmp/php6v67dl344a2l8UmUtyN</code></p>
+<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/tmp/phpoidva312eosn9GFVlNU</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -835,17 +833,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Example: <code>4326.41688</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>meal_time</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="meal_time"                data-endpoint="POSTapi-meals"
-               value="architecto"
-               data-component="body">
-    <br>
-<p>Example: <code>architecto</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>goal_type</code></b>&nbsp;&nbsp;
@@ -1505,11 +1492,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"plan_date\": \"2025-06-06T06:17:12\",
+    \"plan_date\": \"2025-06-09T10:01:11\",
     \"meals\": [
         {
             \"id\": \"architecto\",
-            \"meal_time\": \"breakfast\"
+            \"type\": \"dinner\"
         }
     ]
 }"
@@ -1527,11 +1514,11 @@ const headers = {
 };
 
 let body = {
-    "plan_date": "2025-06-06T06:17:12",
+    "plan_date": "2025-06-09T10:01:11",
     "meals": [
         {
             "id": "architecto",
-            "meal_time": "breakfast"
+            "type": "dinner"
         }
     ]
 };
@@ -1622,10 +1609,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="plan_date"                data-endpoint="POSTapi-mealplans"
-               value="2025-06-06T06:17:12"
+               value="2025-06-09T10:01:11"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-06-06T06:17:12</code></p>
+<p>Must be a valid date. Example: <code>2025-06-09T10:01:11</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -1648,15 +1635,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The <code>id</code> of an existing record in the meals table. Example: <code>architecto</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>meal_time</code></b>&nbsp;&nbsp;
+                        <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="meals.0.meal_time"                data-endpoint="POSTapi-mealplans"
-               value="breakfast"
+                              name="meals.0.type"                data-endpoint="POSTapi-mealplans"
+               value="dinner"
                data-component="body">
     <br>
-<p>Example: <code>breakfast</code></p>
+<p>Example: <code>dinner</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>breakfast</code></li> <li><code>lunch</code></li> <li><code>dinner</code></li> <li><code>snack</code></li></ul>
                     </div>

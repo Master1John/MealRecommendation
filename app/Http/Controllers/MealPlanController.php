@@ -17,7 +17,7 @@ class MealPlanController extends Controller
             'plan_date' => 'required|date',
             'meals' => 'required|array',
             'meals.*.id' => 'required|exists:meals,id',
-            'meals.*.meal_time' => 'required|in:breakfast,lunch,dinner,snack',
+            'meals.*.type' => 'required|in:breakfast,lunch,dinner,snack',
         ]);
 
         $mealPlan = auth()->user()->mealPlans()->create([
@@ -25,7 +25,7 @@ class MealPlanController extends Controller
         ]);
 
         foreach ($request->meals as $meal) {
-            $mealPlan->meals()->attach($meal['id'], ['meal_time' => $meal['meal_time']]);
+            $mealPlan->meals()->attach($meal['id'], ['type' => $meal['type']]);
         }
 
         return response()->json(['message' => 'Meal plan created successfully.']);
@@ -38,7 +38,7 @@ class MealPlanController extends Controller
             ->with(['meals'])
             ->firstOrFail();
 
-        $groupedMeals = $mealPlan->meals->groupBy('pivot.meal_time');
+        $groupedMeals = $mealPlan->meals->groupBy('pivot.type');
 
         return response()->json([
             'date' => $mealPlan->plan_date,
