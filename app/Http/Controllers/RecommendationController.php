@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\RecommendationService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Meal;
 use App\Models\MealRecommendation;
+
 
 class RecommendationController extends Controller
 {
@@ -18,19 +19,10 @@ class RecommendationController extends Controller
             return response()->json(['message' => 'User goal is not set.'], 400);
         }
 
-        $recommendedMeals = Meal::query()->where('goal_type', $user->goal)
-            ->inRandomOrder()
-            ->get();
+        $service = new RecommendationService($user);
+        $meals = $service->recommend();
 
-        foreach ($recommendedMeals as $meal) {
-            MealRecommendation::query()->create([
-                'user_id' => $user->id,
-                'meal_id' => $meal->id,
-                'recommended_date' => Carbon::now()->toDateString()
-            ]);
-        }
-
-        return response()->json($recommendedMeals);
+        return response()->json($meals);
     }
 
     public function history()
