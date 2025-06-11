@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('meal_plan_meal', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(MealPlan::class);
-            $table->foreignId(Meal::class);
+            $table->foreignIdFor(Meal::class);
             $table->enum('type', array_column(MealType::cases(), 'value'));
         });
     }
