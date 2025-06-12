@@ -101,8 +101,8 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-mealplans">
                                 <a href="#endpoints-POSTapi-mealplans">POST api/mealplans</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-mealplans--id-">
-                                <a href="#endpoints-GETapi-mealplans--id-">GET api/mealplans/{id}</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-mealplans--date-">
+                                <a href="#endpoints-GETapi-mealplans--date-">GET api/mealplans/{date}</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-history">
                                 <a href="#endpoints-GETapi-history">GET api/history</a>
@@ -124,7 +124,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 9, 2025</li>
+        <li>Last updated: June 12, 2025</li>
     </ul>
 </div>
 
@@ -166,11 +166,7 @@ You can switch the language used with the tabs at the top right (or from the nav
     --data "{
     \"name\": \"architecto\",
     \"email\": \"zbailey@example.net\",
-    \"password\": \"architecto\",
-    \"gender\": \"architecto\",
-    \"age\": 16,
-    \"height\": 4326.41688,
-    \"weight\": 4326.41688
+    \"password\": \"architecto\"
 }"
 </code></pre></div>
 
@@ -188,11 +184,7 @@ const headers = {
 let body = {
     "name": "architecto",
     "email": "zbailey@example.net",
-    "password": "architecto",
-    "gender": "architecto",
-    "age": 16,
-    "height": 4326.41688,
-    "weight": 4326.41688
+    "password": "architecto"
 };
 
 fetch(url, {
@@ -307,61 +299,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Example: <code>architecto</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>gender</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="gender"                data-endpoint="POSTapi-register"
-               value="architecto"
-               data-component="body">
-    <br>
-<p>Example: <code>architecto</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>age</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="age"                data-endpoint="POSTapi-register"
-               value="16"
-               data-component="body">
-    <br>
-<p>Example: <code>16</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>height</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="height"                data-endpoint="POSTapi-register"
-               value="4326.41688"
-               data-component="body">
-    <br>
-<p>Example: <code>4326.41688</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>weight</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="weight"                data-endpoint="POSTapi-register"
-               value="4326.41688"
-               data-component="body">
-    <br>
-<p>Example: <code>4326.41688</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>goal</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="goal"                data-endpoint="POSTapi-register"
-               value=""
-               data-component="body">
-    <br>
-
         </div>
         </form>
 
@@ -654,7 +591,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "carbs=4326.41688"\
     --form "fat=4326.41688"\
     --form "goal_type=architecto"\
-    --form "image=@/tmp/phpoidva312eosn9GFVlNU" </code></pre></div>
+    --form "image=@/tmp/phplvv137a6pfpn2HmsyqA" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -766,7 +703,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/tmp/phpoidva312eosn9GFVlNU</code></p>
+<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/tmp/phplvv137a6pfpn2HmsyqA</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -1492,11 +1429,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"plan_date\": \"2025-06-09T10:01:11\",
+    \"plan_date\": \"2025-06-12T02:56:03\",
     \"meals\": [
         {
             \"id\": \"architecto\",
-            \"type\": \"dinner\"
+            \"type\": \"breakfast\"
         }
     ]
 }"
@@ -1514,11 +1451,11 @@ const headers = {
 };
 
 let body = {
-    "plan_date": "2025-06-09T10:01:11",
+    "plan_date": "2025-06-12T02:56:03",
     "meals": [
         {
             "id": "architecto",
-            "type": "dinner"
+            "type": "breakfast"
         }
     ]
 };
@@ -1609,10 +1546,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="plan_date"                data-endpoint="POSTapi-mealplans"
-               value="2025-06-09T10:01:11"
+               value="2025-06-12T02:56:03"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-06-09T10:01:11</code></p>
+<p>Must be a valid date. Example: <code>2025-06-12T02:56:03</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -1640,10 +1577,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="meals.0.type"                data-endpoint="POSTapi-mealplans"
-               value="dinner"
+               value="breakfast"
                data-component="body">
     <br>
-<p>Example: <code>dinner</code></p>
+<p>Example: <code>breakfast</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>breakfast</code></li> <li><code>lunch</code></li> <li><code>dinner</code></li> <li><code>snack</code></li></ul>
                     </div>
@@ -1651,14 +1588,14 @@ Must be one of:
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-mealplans--id-">GET api/mealplans/{id}</h2>
+                    <h2 id="endpoints-GETapi-mealplans--date-">GET api/mealplans/{date}</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-mealplans--id-">
+<span id="example-requests-GETapi-mealplans--date-">
 <blockquote>Example request:</blockquote>
 
 
@@ -1686,7 +1623,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-mealplans--id-">
+<span id="example-responses-GETapi-mealplans--date-">
             <blockquote>
             <p>Example response (401):</p>
         </blockquote>
@@ -1704,43 +1641,43 @@ access-control-allow-origin: *
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-mealplans--id-" hidden>
+<span id="execution-results-GETapi-mealplans--date-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-mealplans--id-"></span>:
+                id="execution-response-status-GETapi-mealplans--date-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-mealplans--id-"
+    <pre class="json"><code id="execution-response-content-GETapi-mealplans--date-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-mealplans--id-" hidden>
+<span id="execution-error-GETapi-mealplans--date-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-mealplans--id-">
+    <pre><code id="execution-error-message-GETapi-mealplans--date-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-mealplans--id-" data-method="GET"
-      data-path="api/mealplans/{id}"
+<form id="form-GETapi-mealplans--date-" data-method="GET"
+      data-path="api/mealplans/{date}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-mealplans--id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-mealplans--date-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-mealplans--id-"
-                    onclick="tryItOut('GETapi-mealplans--id-');">Try it out ⚡
+                    id="btn-tryout-GETapi-mealplans--date-"
+                    onclick="tryItOut('GETapi-mealplans--date-');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-mealplans--id-"
-                    onclick="cancelTryOut('GETapi-mealplans--id-');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-mealplans--date-"
+                    onclick="cancelTryOut('GETapi-mealplans--date-');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-mealplans--id-"
+                    id="btn-executetryout-GETapi-mealplans--date-"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1748,7 +1685,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/mealplans/{id}</code></b>
+            <b><code>api/mealplans/{date}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1756,7 +1693,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-mealplans--id-"
+                              name="Content-Type"                data-endpoint="GETapi-mealplans--date-"
                value="application/json"
                data-component="header">
     <br>
@@ -1767,7 +1704,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-mealplans--id-"
+                              name="Accept"                data-endpoint="GETapi-mealplans--date-"
                value="application/json"
                data-component="header">
     <br>
@@ -1775,15 +1712,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="id"                data-endpoint="GETapi-mealplans--id-"
+                              name="date"                data-endpoint="GETapi-mealplans--date-"
                value="architecto"
                data-component="url">
     <br>
-<p>The ID of the mealplan. Example: <code>architecto</code></p>
+<p>Example: <code>architecto</code></p>
             </div>
                     </form>
 

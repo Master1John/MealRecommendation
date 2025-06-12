@@ -52,64 +52,10 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         custom: []
-      gender:
-        name: gender
-        description: ''
-        required: false
-        example: architecto
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      age:
-        name: age
-        description: ''
-        required: false
-        example: 16
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      height:
-        name: height
-        description: ''
-        required: false
-        example: 4326.41688
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      weight:
-        name: weight
-        description: ''
-        required: false
-        example: 4326.41688
-        type: number
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
-      goal:
-        name: goal
-        description: ''
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        custom: []
     cleanBodyParameters:
       name: architecto
       email: zbailey@example.net
       password: architecto
-      gender: architecto
-      age: 16
-      height: 4326.41688
-      weight: 4326.41688
     fileParameters: []
     responses: []
     responseFields: []
@@ -563,7 +509,7 @@ endpoints:
         name: plan_date
         description: 'Must be a valid date.'
         required: true
-        example: '2025-06-09T10:01:11'
+        example: '2025-06-12T02:56:03'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -594,7 +540,7 @@ endpoints:
         name: 'meals[].type'
         description: ''
         required: true
-        example: dinner
+        example: breakfast
         type: string
         enumValues:
           - breakfast
@@ -605,11 +551,11 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      plan_date: '2025-06-09T10:01:11'
+      plan_date: '2025-06-12T02:56:03'
       meals:
         -
           id: architecto
-          type: dinner
+          type: breakfast
     fileParameters: []
     responses: []
     responseFields: []
@@ -621,7 +567,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/mealplans/{id}'
+    uri: 'api/mealplans/{date}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -635,9 +581,9 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the mealplan.'
+      date:
+        name: date
+        description: ''
         required: true
         example: architecto
         type: string
@@ -646,7 +592,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: architecto
+      date: architecto
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
